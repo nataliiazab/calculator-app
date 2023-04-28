@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Wrapper from "./components/Wrapper";
 import Screen from "./components/Screen";
 import ButtonBox from "./components/ButtonBox";
 import Button from "./components/Button";
@@ -16,15 +15,12 @@ const btnValues = [
 function App() {
   return (
     <div>
-      <Wrapper>
-        <Screen />
+      <Screen />
         <ButtonBox>
           {btnValues.flat().map((btn, i) => (
             <Button value={btn} key={i} />
           ))}
         </ButtonBox>
-    
-      </Wrapper>
     </div>
   );
 }
