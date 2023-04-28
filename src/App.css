@@ -1,0 +1,19 @@
+
+/* for all elements */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+.wrapper {
+background-color: blueviolet;
+padding: 25px;
+
+
+}
+
+.screen {
+background-color: red;
+}

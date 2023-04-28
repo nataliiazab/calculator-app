@@ -14,7 +14,7 @@ const btnValues = [
 
 function App() {
   return (
-    <div>
+    <div className="wrapper">
       <Screen />
         <ButtonBox>
           {btnValues.flat().map((btn, i) => (
