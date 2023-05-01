@@ -13,19 +13,19 @@ const btnValues = [
 ];
 
 function App() {
-  const [displayValue, setDisplayValue] = useState("0");
+  const [calc, setCalc] = useState("0");
 
   const handleButtonClick = (value) => {
-    if (displayValue === "0") {
-      setDisplayValue(value.toString());
+    if (calc === "0") {
+      setCalc(value.toString());
     } else {
-      setDisplayValue(displayValue + value);
+      setCalc(calc + value);
     }
   };
 
   return (
     <div className="wrapper">
-      <Screen value={displayValue} />
+      <Screen value={calc} />
       <ButtonBox>
         {btnValues.flat().map((btn, i) => (
           <Button value={btn} key={i} onClick={() => handleButtonClick(btn)} />
