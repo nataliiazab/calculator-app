@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Screen from "./components/Screen";
 import ButtonBox from "./components/ButtonBox";
 import Button from "./components/Button";
+import CalcProvider from "./context/CalcContext";
 
 const btnValues = [
   ["C", "+/-", "%", "/"],
@@ -13,27 +14,18 @@ const btnValues = [
 ];
 
 function App() {
-  const [calc, setCalc] = useState("0");
-
-  const handleButtonClick = (value) => {
-    if (calc === "0") {
-      setCalc(value.toString());
-    } else {
-      setCalc(calc + value);
-    }
-  };
-
   return (
-    <div className="wrapper">
-      <Screen value={calc} />
-      <ButtonBox>
-        {btnValues.flat().map((btn, i) => (
-          <Button value={btn} key={i} onClick={() => handleButtonClick(btn)} />
-        ))}
-      </ButtonBox>
-    </div>
+    <CalcProvider>
+      <div className="wrapper">
+        <Screen />
+        <ButtonBox>
+          {btnValues.flat().map((btn, i) => (
+            <Button value={btn} key={i} />
+          ))}
+        </ButtonBox>
+      </div>
+    </CalcProvider>
   );
 }
 
 export default App;
-
